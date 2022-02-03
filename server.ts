@@ -7,6 +7,7 @@ import SwaggerUI from 'swagger-ui-express';
 import Swagger from './docs/Swagger';
 
 import Router from './src/routes';
+import { handleError } from './src/utils/error';
 dotenv.config();
 
 const app = express();
@@ -20,13 +21,12 @@ var cssOptions = {
     customCssUrl: '/custom.css',
     customSiteTitle: 'Poopcode APIs',
 };
-
-app.use('/docs', SwaggerUI.serve, SwaggerUI.setup(Swagger, cssOptions));
-app.use('/api', Router);
 app.get('/', (req, res, next) => {
     res.redirect('/docs');
 });
-
+app.use('/docs', SwaggerUI.serve, SwaggerUI.setup(Swagger, cssOptions));
+app.use('/api', Router);
+app.use(handleError);
 app.listen(PORT, () => {
     console.log('Connecting 🚀');
 });
