@@ -146,6 +146,45 @@ const MemberSwagger = {
             },
         },
     },
+    '/api/members/update/{id}': {
+        post: {
+            tags: ['Members'],
+            summary: 'Update',
+            produces: ['application/json'],
+            parameters: [
+                {
+                    name: 'id',
+                    in: 'path',
+                    description: 'ID of member',
+                    required: true,
+                    type: 'string',
+                },
+                {
+                    in: 'body',
+                    name: 'body',
+                    description: 'Add new member',
+                    required: true,
+                    schema: {
+                        $ref: '#/definitions/Member',
+                    },
+                },
+            ],
+            responses: {
+                '200': {
+                    description: 'Success',
+                    schema: {
+                        $ref: '#/definitions/ApiResponse',
+                    },
+                },
+                '400': {
+                    description: 'Error',
+                    schema: {
+                        $ref: '#/definitions/ApiResponse',
+                    },
+                },
+            },
+        },
+    },
 };
 
 export default MemberSwagger;

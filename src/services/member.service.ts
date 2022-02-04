@@ -53,5 +53,20 @@ const MemberService = {
             throw ErrorCustom.BadRequest((error as Error).message);
         }
     },
+    updateMember: async (idMember: string, body: MemberModel) => {
+        try {
+            const member = await Members.findById(idMember);
+            if (!member) throw new Error('Không tồn tại');
+            console.log(body);
+
+            await member.updateOne({
+                ...body,
+            });
+
+            return member;
+        } catch (error) {
+            throw ErrorCustom.BadRequest((error as Error).message);
+        }
+    },
 };
 export default MemberService;

@@ -35,6 +35,12 @@ const MemberController = {
         const result = await MemberService.getList();
         return res.status(HttpStatusCode.OK).json({ data: result });
     },
-    updateMember: async (req: Request, res: Response) => {},
+    updateMember: async (req: Request, res: Response) => {
+        const idMember = req.params.id;
+        const { _id, membername, ...contentUpdate } = req.body;
+        await MemberValidate.MemberUpdate(contentUpdate);
+        await MemberService.updateMember(idMember, contentUpdate);
+        return res.status(HttpStatusCode.OK).json({ message: 'Thành công' });
+    },
 };
 export default MemberController;
