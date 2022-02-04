@@ -7,7 +7,7 @@ export class ErrorCustom extends Error {
         this.statusCode = statusCode;
         this.message = message;
     }
-    static BadError = (mess: string) => {
+    static BadRequest = (mess: string) => {
         return new ErrorCustom(400, mess);
     };
 }

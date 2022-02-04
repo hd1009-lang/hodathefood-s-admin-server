@@ -8,7 +8,10 @@ import Swagger from './docs/Swagger';
 
 import Router from './src/routes';
 import { handleError } from './src/utils/error';
+import connectDB from './src/config/db';
 dotenv.config();
+
+connectDB();
 
 const app = express();
 const PORT = 6969;
