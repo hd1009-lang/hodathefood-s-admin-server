@@ -20,7 +20,7 @@ const Member = {
         name: {
             type: 'string',
         },
-        username: {
+        membername: {
             type: 'string',
         },
         password: {
@@ -31,9 +31,36 @@ const Member = {
         },
     },
 };
+const Login = {
+    type: 'object',
+    properties: {
+        membername: {
+            type: 'string',
+        },
+        password: {
+            type: 'string',
+        },
+    },
+};
+const Register = {
+    type: 'object',
+    properties: {
+        name: {
+            type: 'string',
+        },
+        membername: {
+            type: 'string',
+        },
+        idRole: {
+            type: 'string',
+        },
+    },
+};
 const DefaultModel = {
+    Login,
     Role,
     Member,
+    Register,
     ApiResponse,
 };
 

@@ -10,6 +10,9 @@ export class ErrorCustom extends Error {
     static BadRequest = (mess: string) => {
         return new ErrorCustom(400, mess);
     };
+    static UnAuthorized = (mess: string) => {
+        return new ErrorCustom(401, mess);
+    };
 }
 
 export const handleError = (err: ErrorCustom, req: Request, res: Response, next: Function) => {

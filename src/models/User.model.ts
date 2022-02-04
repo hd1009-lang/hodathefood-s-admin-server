@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
 export interface IUserModel extends mongoose.Document {
-    username: string;
+    membername: string;
     name: string;
     bmiId: string;
     password: string;
@@ -10,7 +10,7 @@ export interface IUserModel extends mongoose.Document {
 }
 const UserSchema = new mongoose.Schema(
     {
-        username: {
+        membername: {
             type: String,
             trim: true,
             required: true,
