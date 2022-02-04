@@ -1,8 +1,8 @@
 import express from 'express';
+import RoleController from '../components/role.controller';
+import asyncWrapper from '../utils/wrapper';
 
 const router = express.Router();
-router.get('/create', (req, res, next) => {
-    res.status(200).json('Created');
-});
+router.post('/create', asyncWrapper(RoleController.created));
 
 export default router;

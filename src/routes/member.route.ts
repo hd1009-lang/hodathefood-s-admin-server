@@ -1,6 +1,7 @@
 import express from 'express';
-import MemberController from '../components/Member.controller';
+import MemberController from '../components/member.controller';
 import asyncWrapper from '../utils/wrapper';
 const router = express.Router();
-router.get('/login', asyncWrapper(MemberController.login));
+router.post('/create', asyncWrapper(MemberController.create));
+router.get('/list', asyncWrapper(MemberController.getList));
 export default router;
