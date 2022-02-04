@@ -1,0 +1,4 @@
+
+const checkPermission = (action:string[])=>{
+  
+}

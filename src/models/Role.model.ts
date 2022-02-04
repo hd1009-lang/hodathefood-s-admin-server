@@ -19,6 +19,10 @@ const RoleModel = new mongoose.Schema(
             required: true,
             trim: true,
         },
+        action: {
+            type: Array,
+            default: [''],
+        },
     },
     {
         timestamps: true,

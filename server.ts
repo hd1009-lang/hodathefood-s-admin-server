@@ -3,6 +3,7 @@ import cors from 'cors';
 import helmet from 'helmet';
 import dotenv from 'dotenv';
 import path from 'path';
+import cookieParser from 'cookie-parser';
 import SwaggerUI from 'swagger-ui-express';
 import Swagger from './docs/Swagger';
 
@@ -16,6 +17,7 @@ connectDB();
 const app = express();
 const PORT = 6969;
 
+app.use(cookieParser()); //Đọc cookie để lấy token trong cookie
 app.use(cors());
 app.use(helmet());
 app.use(express.json());

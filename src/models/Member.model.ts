@@ -13,7 +13,7 @@ const MemberSchema = new mongoose.Schema(
             type: String,
             required: true,
         },
-        username: {
+        membername: {
             type: String,
             trim: true,
             required: true,
