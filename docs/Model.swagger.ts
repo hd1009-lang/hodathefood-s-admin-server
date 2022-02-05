@@ -56,12 +56,27 @@ const Register = {
         },
     },
 };
+const CateIngredient = {
+    type: 'object',
+    properties: {
+        _id: {
+            type: 'string',
+        },
+        name: {
+            type: 'string',
+        },
+        key: {
+            type: 'string',
+        },
+    },
+};
 const DefaultModel = {
     Login,
     Role,
     Member,
     Register,
     ApiResponse,
+    CateIngredient,
 };
 
 export default DefaultModel;
