@@ -1,4 +1,4 @@
-import { CateIngredientModel } from './../Types/Category';
+import { CateIngredientModel } from './../Types/Ingredient';
 import mongoose from 'mongoose';
 
 type ICateIngredientModel = CateIngredientModel & mongoose.Document;

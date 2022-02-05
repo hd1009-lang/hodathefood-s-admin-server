@@ -2,6 +2,7 @@ import DefaultModel from './Model.swagger';
 import RoleSwagger from './Role.swagger';
 import MemberSwagger from './Member.swagger';
 import IngredientSwagger from './Ingredient.swagger';
+import AuthSwagger from './Auth.swagger';
 
 const Swagger = {
     swagger: '2.0',
@@ -11,6 +12,10 @@ const Swagger = {
         title: "'Hodathefood's swagger",
     },
     tags: [
+        {
+            name: 'Auth',
+            description: 'Auth',
+        },
         {
             name: 'Roles',
             description: 'Role member ',
@@ -26,8 +31,9 @@ const Swagger = {
     ],
     schemes: ['HTTP', 'HTTPS'],
     paths: {
-        ...RoleSwagger,
+        ...AuthSwagger, 
         ...MemberSwagger,
+        ...RoleSwagger,
         ...IngredientSwagger,
     },
     definitions: {

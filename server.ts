@@ -10,6 +10,8 @@ import Swagger from './docs/Swagger';
 import Router from './src/routes';
 import { handleError } from './src/utils/error';
 import connectDB from './src/config/db';
+// import importData from './src/config/importData';
+// const { data } = require('./src/config/trung.json');
 dotenv.config();
 
 connectDB();
@@ -34,7 +36,6 @@ app.get('/', (req, res, next) => {
 app.use('/docs', SwaggerUI.serve, SwaggerUI.setup(Swagger, cssOptions));
 app.use('/api', Router);
 app.use(handleError);
-
 app.listen(PORT, () => {
     console.log("Let's the game begin 🚀");
 });
