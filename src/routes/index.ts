@@ -1,6 +1,7 @@
 import express from 'express';
 import Member from './member.route';
 import Role from './role.route';
+import Ingredient from './ingredient.route';
 const router = express.Router();
 
 const routes = [
@@ -11,6 +12,10 @@ const routes = [
     {
         path: '/roles',
         route: Role,
+    },
+    {
+        path: '/ingredients',
+        route: Ingredient,
     },
 ];
 

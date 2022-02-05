@@ -1,6 +1,7 @@
 import DefaultModel from './Model.swagger';
 import RoleSwagger from './Role.swagger';
 import MemberSwagger from './Member.swagger';
+import IngredientSwagger from './Ingredient.swagger';
 
 const Swagger = {
     swagger: '2.0',
@@ -18,11 +19,16 @@ const Swagger = {
             name: 'Members',
             description: 'Member in server',
         },
+        {
+            name: 'Ingredients',
+            description: 'Function of ingredients',
+        },
     ],
     schemes: ['HTTP', 'HTTPS'],
     paths: {
         ...RoleSwagger,
         ...MemberSwagger,
+        ...IngredientSwagger,
     },
     definitions: {
         ...DefaultModel,
