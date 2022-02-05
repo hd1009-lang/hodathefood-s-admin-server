@@ -70,6 +70,37 @@ const CateIngredient = {
         },
     },
 };
+const Ingredient = {
+    type: 'object',
+    properties: {
+        _id: {
+            type: 'string',
+        },
+        name: {
+            type: 'string',
+        },
+        idCate: {
+            type: 'string',
+        },
+        nutrition: {
+            type: 'object',
+            properties: {
+                calo: {
+                    type: 'number',
+                },
+                protein: {
+                    type: 'number',
+                },
+                fat: {
+                    type: 'number',
+                },
+                carb: {
+                    type: 'number',
+                },
+            },
+        },
+    },
+};
 const DefaultModel = {
     Login,
     Role,
@@ -77,6 +108,7 @@ const DefaultModel = {
     Register,
     ApiResponse,
     CateIngredient,
+    Ingredient,
 };
 
 export default DefaultModel;
