@@ -14,10 +14,10 @@ const IngredientSchema = new mongoose.Schema({
         ref: 'cate-ingredients',
     },
     nutrition: {
-        calo: { type: Number, required: true },
-        protein: { type: Number, required: true },
-        fat: { type: Number, required: true },
-        carb: { type: Number, required: true },
+        calo: { type: Number, required: true, default: 0 },
+        protein: { type: Number, required: true, default: 0 },
+        fat: { type: Number, required: true, default: 0 },
+        carb: { type: Number, required: true, default: 0 },
     },
 });
 

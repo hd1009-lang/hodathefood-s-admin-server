@@ -16,9 +16,6 @@ const importData = async (data: IngredientModel[], idCate: string) => {
             };
         });
         const result = await Ingredients.insertMany(handleData);
-        console.log('okokoko');
-
-        console.log(result);
     } catch (error) {
         console.log((error as Error).message);
     }
