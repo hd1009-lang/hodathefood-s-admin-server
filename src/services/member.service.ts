@@ -3,6 +3,7 @@ import { ErrorCustom } from './../utils/error';
 import Members from '../models/Member.model';
 import { MemberModel } from './../Types/Admin';
 import Token from '../utils/jwt';
+import Helper from '../utils/regex';
 const MemberService = {
     login: async (body: MemberModel) => {
         try {
@@ -36,10 +37,12 @@ const MemberService = {
         try {
             const { membername } = body;
             const members = await Members.count();
-
-            const id = members + '-' + 'member' + membername;
+            const memberNameAfter = Helper.removeVietnameseTones(membername as string)
+                .split(' ')
+                .join('');
+            const id = members + '-' + 'member' + memberNameAfter;
             const password = Math.floor(1000 + Math.random() * 9000);
-            const newMember = await Members.create({ ...body, _id: id, password: password });
+            const newMember = await Members.create({ ...body, _id: id, password: password, membername: memberNameAfter });
             return newMember;
         } catch (error) {
             throw ErrorCustom.BadRequest((error as Error).message);
